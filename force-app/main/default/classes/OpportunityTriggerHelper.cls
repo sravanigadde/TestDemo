@@ -50,7 +50,7 @@ public class OpportunityTriggerHelper {
         if(lstAccounts!=null && !lstAccounts.isEmpty() ){
             update lstAccounts;
         }
-        if(sendSMSAccountIds.size()>0){
+        if(sendSMSAccountIds.size()>0 && !System.isBatch()){
             MessagingService.sendSMSToCEO(sendSMSAccountIds);
         }
     }

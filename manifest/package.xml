@@ -14,7 +14,7 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>MessagingService</members>
+        <members>OpportunityTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>

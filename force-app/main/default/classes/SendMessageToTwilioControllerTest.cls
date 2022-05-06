@@ -3,6 +3,10 @@
  **/
 @isTest
 public class SendMessageToTwilioControllerTest {
+    @testSetup 
+    public static void setup() {
+      
+    }
         
     @isTest
     public static void getAccountDataTest(){
@@ -18,9 +22,19 @@ public class SendMessageToTwilioControllerTest {
     }
     @isTest
      public static void sendSMSToAccountTest(){
+           //Create custom setting
+        API_details__c setting = new API_details__c();
+        setting.Name = 'Twilio';
+        setting.accountSID__c = 'ABC';
+        setting.EndPointURL__c = 'https://api.twilio.com';
+        setting.FromPhone__c = '+9188777656544';
+        setting.Token__c = '12345';
+        insert setting;
+         
          Test.setMock(HttpCalloutMock.class, new MessagingServiceMock());
+         Test.startTest();
          String msg =SendMessageToTwilioController.sendSMSToAccount('+919886916030');
-         System.assertEquals(msg,'Success');        
+         Test.stopTest();      
     }
      
 }

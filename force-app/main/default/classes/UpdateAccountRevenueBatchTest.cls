@@ -16,7 +16,6 @@ public class UpdateAccountRevenueBatchTest {
         opp.StageName = 'Closed Won';
         opp.AccountId=acct.Id;
         insert opp;
-        Test.setMock(HttpCalloutMock.class, new MessagingServiceMock());
         UpdateAccountRevenueBatch b = new UpdateAccountRevenueBatch();
         Database.executeBatch(b);
         

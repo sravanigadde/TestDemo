@@ -38,7 +38,7 @@ public class MessagingServiceTest {
          Set<Id> acctIds = new Set<Id>();
         acct  = new Account () ;
         acct.name ='Test Account';
-        acct.phone = '+919886916030';
+        acct.phone = '+919886916030000';
         acct.AnnualRevenue =3000000;
         acct.Annual_Revenue_Spent__c=400000;
         insert acct;
